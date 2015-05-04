@@ -1,9 +1,16 @@
 package com.issac.isoc.model;
 
+import javax.persistence.*;
+
 /**
  * Created by OPSKMC on 5/4/15.
  */
+@Entity
+@Table(name = "question_response")
 public class QuestionResponse {
+    @Id
+    @GeneratedValue
+    private int id;
     private String question;
     private String response;
 
@@ -21,5 +28,13 @@ public class QuestionResponse {
 
     public void setResponse(String response) {
         this.response = response;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

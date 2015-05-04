@@ -1,5 +1,7 @@
 package com.issac.isoc;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,4 +15,10 @@ public class HelloController {
 		model.addAttribute("message", "Hello world!");
 		return "hello";
 	}
+    @RequestMapping(value = "/hibernate", method = RequestMethod.GET)
+    public String configureHibernate(ModelMap model){
+        SessionFactory sessionFactory = HibernateConfig.getSessionFactory();
+        model.addAttribute("message", "Hibernate Configured");
+        return "hello";
+    }
 }

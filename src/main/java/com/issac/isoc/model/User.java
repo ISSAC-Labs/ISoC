@@ -1,9 +1,16 @@
 package com.issac.isoc.model;
 
+import javax.persistence.*;
+
 /**
  * Created by OPSKMC on 5/4/15.
  */
+@Entity
+@Table(name = "user")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String email;

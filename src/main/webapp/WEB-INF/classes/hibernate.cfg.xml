@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+    <session-factory>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <property name="connection.url">jdbc:mysql://localhost/isoc</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- echo all sql to stdout -->
+        <property name ="show_sql">true</property>
+        <!-- drop and recreate database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+        <!-- model class/xml file -->
+
+<!--        <mapping class="com.app.core.models.User" />
+        <mapping class="com.app.frameworks.widget.Widget" />
+        <mapping class="com.app.frameworks.widget.WidgetWrapper" />
+        &lt;!&ndash; Widgets mapping &ndash;&gt;
+        <mapping class="com.app.core.widgets.Portfolio"/>
+        <mapping class="com.app.core.widgets.Gallery"/>
+-->
+        <mapping class="com.issac.isoc.model.Student"/>
+        <mapping class="com.issac.isoc.model.Proposal"/>
+        <mapping class="com.issac.isoc.model.User"/>
+        <mapping class="com.issac.isoc.model.QuestionResponse"/>
+    </session-factory>
+
+</hibernate-configuration>
