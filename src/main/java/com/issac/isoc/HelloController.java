@@ -21,4 +21,10 @@ public class HelloController {
         model.addAttribute("message", "Hibernate Configured");
         return "hello";
     }
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public String authenticate(ModelMap model){
+        String response = null;
+
+        return response;
+    }
 }
